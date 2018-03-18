@@ -214,14 +214,14 @@ public class TestClient {
         System.err.println(client.get_file_info(group_name, remote_filename));
         System.err.println("file url: " + file_url);
 
-        errno = client.download_file(group_name, remote_filename, 0, 0, "c:\\" + remote_filename.replaceAll("/", "_"));
+        errno = client.download_file(group_name, remote_filename, 0, 0, "/Users/dengchao/Downloads/" + remote_filename.replaceAll("/", "_"));
         if (errno == 0) {
           System.err.println("Download file success");
         } else {
           System.err.println("Download file fail, error no: " + errno);
         }
 
-        errno = client.download_file(group_name, remote_filename, 0, 0, new DownloadFileWriter("c:\\" + remote_filename.replaceAll("/", "-")));
+        errno = client.download_file(group_name, remote_filename, 0, 0, new DownloadFileWriter("/Users/dengchao/Download" + remote_filename.replaceAll("/", "-")));
         if (errno == 0) {
           System.err.println("Download file success");
         } else {
